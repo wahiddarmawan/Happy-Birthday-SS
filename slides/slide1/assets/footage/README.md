@@ -1,0 +1,1 @@
+Future optional sky-only loop footage; no video supplied yet. Full existing artwork has baked typography and cannot be overlaid by a video without masking or cutouts. Prefer 1920x1080 H.264 MP4, muted, loop, playsinline.\n

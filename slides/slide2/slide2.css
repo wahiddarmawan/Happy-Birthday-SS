@@ -1,0 +1,29 @@
+.story { display: grid; place-items: center; background: #2c2430; }
+.story__stage { position: relative; width: 100%; height: 100%; min-height: 0; overflow: hidden; }
+.story__background { width: 100%; height: 100%; object-fit: fill; }
+.story__hero { position: absolute; right: 7%; bottom: 22%; width: 43%; height: 64%; object-fit: contain; filter: drop-shadow(0 2px 5px #3a2b3655); mask-image: linear-gradient(#000 94%, transparent); }
+@font-face { font-family: 'Birthday Note'; src: url('../../shared/fonts/NothingYouCouldDo.ttf') format('truetype'); font-display: swap; }
+
+
+
+
+.story__message { position: absolute; left: 17%; top: 27%; width: 32%; color: #f1e4d8; }
+.story__eyebrow { margin: 0 0 18px; color: #dfa4af; font: 400 clamp(13px, 1.35vw, 23px) 'Birthday Note', cursive; }
+.story__message h2 { margin: 0; font: 400 clamp(32px, 4.5vw, 78px)/1.08 Georgia, serif; letter-spacing: -.035em; }
+.story__romance { margin: 24px 0 12px; font: 400 clamp(14px, 1.4vw, 25px)/1.6 'Birthday Note', cursive; }
+.story__heart { color: #dfa4af; font: 400 clamp(30px, 3vw, 52px)/1 'Birthday Note', cursive; }
+@media (max-width: 760px) and (orientation: portrait) {
+  .story__message { left: 7%; top: 24%; width: 43%; }
+  .story__eyebrow { font-size: 13px; margin-bottom: 10px; }
+  .story__message h2 { font-size: clamp(24px, 6.5vw, 32px); }
+  .story__romance { font-size: 12px; margin: 12px 0; }
+  .story__romance br { display: none; }
+  .story__hero { right: 2%; bottom: 15%; width: 65%; height: 38%; }
+  .story__heart { font-size: 26px; }
+}
+
+
+
+
+
+

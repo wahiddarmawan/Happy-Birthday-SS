@@ -1,0 +1,54 @@
+@font-face { font-family: 'Birthday Hand'; src: url('../../shared/fonts/NothingYouCouldDo.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+.slide4 { width: 100vw; height: 100svh; overflow: hidden; isolation: isolate; display: grid; grid-template-rows: minmax(0, 1fr) minmax(120px, 30dvh); gap: 12px; padding: 32px 3.6% 48px; background: #090909; }
+.slide4__hero { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, transparent 32%, #030d1666 43%, #030d16 56%), url('assets/background/bouquet-sky.png') calc(50% - 18vw) center / cover no-repeat, #030d16; }
+.slide4__hero-image, .slide4__hero-video { position: absolute; right: 0; top: 0; width: 56%; height: 100%; object-fit: cover; mask-image: linear-gradient(90deg, transparent 0%, #00000030 5%, #00000080 10%, #000000d9 16%, #000 22%); object-position: center; opacity: 0; transition: opacity .3s ease; }
+.slide4__hero:has(.slide4__hero-video.is-active) .slide4__hero-image { opacity: 0; }
+.slide4__hero-image.is-active, .slide4__hero-video.is-active { opacity: 1; }
+.slide4__gradient { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #030d16eb 0%, #030d16b3 20%, #030d1666 38%, #030d1626 55%, transparent 72%), linear-gradient(0deg, #050607f2 0%, #05060799 12%, #05060726 30%, transparent 50%); }
+.slide4__copy { align-self: center; width: 48%; }
+.slide4__copy h2 { margin: 0 0 12px; color: #f0c6c0; font-family: 'Birthday Hand', cursive; font-size: clamp(44px, min(8vw, 10dvh), 125px); line-height: .95; font-weight: 400; letter-spacing: -.055em; transform: rotate(-5deg); transform-origin: left center; }
+.slide4__copy h2 span { display: block; padding-left: 5%; white-space: nowrap; }
+.slide4__copy h2 b { font-weight: 400; color: #df9aa8; font-size: .65em; }
+.slide4__copy h3 { margin: 18px 0 10px; font-size: clamp(20px, 2.5vw, 36px); line-height: 1.2; }
+.slide4__metadata, .slide4__description, .slide4__starring { font-size: clamp(12px, min(1.5vw, 2.2dvh), 22px); line-height: 1.4; }
+.slide4__metadata { margin: 0; }
+.slide4__description { margin: 16px 0; }
+.slide4__starring { margin: 16px 0 20px; }
+.slide4__starring span { color: #aaa; }
+.slide4__copy .button { font-size: clamp(14px, 1.7vw, 24px); padding: 8px 24px; }
+.memory-rail { width: 59%; min-height: 0; position: relative; }
+.memory-rail h3 { margin: 0 0 10px; font-size: clamp(18px, 2vw, 28px); font-weight: 600; }
+.memory-rail__row { display: grid; grid-template-columns: 32px minmax(0, 1fr) 32px; gap: 10px; align-items: center; height: calc(100% - 42px); }
+.memory-rail__viewport { height: 100%; min-width: 0; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; touch-action: pan-x; cursor: grab; scrollbar-width: none; }
+.memory-rail__viewport::-webkit-scrollbar { display: none; }
+.memory-rail__viewport.is-dragging { cursor: grabbing; user-select: none; }
+.memory-rail__track { display: flex; gap: 12px; width: max-content; height: 100%; padding: 3px; }
+.media-card { position: relative; flex: 0 0 auto; height: 100%; aspect-ratio: 2 / 3; padding: 0; overflow: hidden; border: 1px solid #ffffff55; border-radius: 9px; color: white; background: #111; }
+.media-card.is-active { border-color: #f0ce80; }
+.media-card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.media-card__play { position: absolute; top: 8px; right: 8px; z-index: 1; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #000b; font-size: 10px; }
+.rail-arrow { width: 32px; height: 40px; padding: 0; border: 1px solid #ffffff77; border-radius: 50%; color: white; background: #050505aa; font-size: 28px; }
+.rail-arrow:disabled { opacity: .35; cursor: default; }
+.media-status { position: absolute; right: 4%; top: 74px; max-width: 280px; color: white; background: #111c; border-radius: 12px; padding: 8px 12px; font-size: 12px; }
+.media-status:empty { display: none; }
+@media (max-width: 760px) and (orientation: portrait) {
+  .slide4 { grid-template-rows: minmax(0, 1fr) 26dvh; gap: 8px; padding: 24px 5% 44px; }
+  .slide4__hero-image, .slide4__hero-video { width: 66%; height: 42%; object-position: center top; }
+  .slide4__hero-video { width: 100%; height: 32%; }
+  .memory-rail { width: 100%; }
+  .slide4__gradient { background: linear-gradient(90deg, #000c, #0005), linear-gradient(0deg, #000e, transparent); }
+  .slide4__copy { width: 92%; align-self: end; padding-bottom: 12px; }
+  .slide4__copy h2 { font-size: clamp(44px, 13vw, 72px); }
+  .slide4__copy h3 { margin: 14px 0 8px; font-size: 22px; }
+  .slide4__metadata, .slide4__description, .slide4__starring { font-size: 12px; }
+  .slide4__description, .slide4__starring { margin: 10px 0; }
+  .slide4__copy .button { min-height: 40px; font-size: 14px; }
+  .desktop-break { display: none; }
+  .memory-rail__row { grid-template-columns: 24px minmax(0, 1fr) 24px; gap: 6px; }
+  .rail-arrow { width: 24px; height: 32px; }
+}
+@media (max-height: 520px) { .slide4 { grid-template-rows: minmax(0, 1fr) 25dvh; padding-bottom: 38px; gap: 4px; } .slide4__copy h2 { font-size: 7dvh; } .slide4__copy h3 { margin: 6px 0; font-size: 18px; } .slide4__description, .slide4__starring { margin: 6px 0; } .slide4__copy .button { min-height: 32px; padding: 4px 16px; font-size: 12px; } .memory-rail h3 { font-size: 16px; margin-bottom: 4px; } .memory-rail__row { height: calc(100% - 24px); } }
+
+
+
+

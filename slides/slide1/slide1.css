@@ -1,0 +1,11 @@
+.birthday { display: grid; place-items: center; background: #7dc2f0; }
+.birthday__stage { position: relative; width: 100%; height: 100dvh; min-height: 0; }
+.birthday__master { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.birthday__cta { position: absolute; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translateX(-50%); min-height: 44px; padding: 10px 24px; background: #fff2a6; border-color: #e9d276; color: #243922; box-shadow: 0 2px 12px #23371944; }
+.birthday__cta:hover { transform: translate(-50%, -2px); }
+@media (max-width: 760px) and (orientation: portrait) {
+  .birthday__master { object-fit: contain; }
+  .birthday__cta { bottom: 64px; font-size: 14px; }
+}
+
+
